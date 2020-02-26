@@ -1,0 +1,7 @@
+    public function index()
+    {
+        //$posts=DB::select('SELECT * FROM posts');
+        // $posts=Post::orderBy('created_at','desc')->paginate(5);
+        $invoices= invoice::all()->toArray();
+        return view('posts.index', compact('invoices'));
+    }
