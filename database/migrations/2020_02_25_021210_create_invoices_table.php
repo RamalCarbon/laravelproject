@@ -21,6 +21,7 @@ class CreateInvoicesTable extends Migration
             $table->mediumText('notes');
             $table->date('date_created');
             $table->integer('access_code');
+            $post->user_id= auth()->user()->id;
         });
     }
 

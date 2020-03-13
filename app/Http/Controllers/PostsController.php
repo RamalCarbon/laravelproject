@@ -54,18 +54,25 @@ class PostsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'title'=> 'required',
-            'body'=> 'required'
+            'client_name'=> 'required',
+            'client_address'=> 'required',
+            'notes'=> 'required',
+            'item_no'=> 'required',
+            'date_created'=> 'required',
+            'access_code'=> 'required'
         ]);
         
-        //Create Post
-        $post= new Post;
-        $post->title= $request->input('title');
-        $post->body= $request->input('body');
-        $post->user_id= auth()->user()->id;
-        $post->save();
+        //Create Invoice
+        $invoice= new invoice;
+        $invoice->client_name= $request->input('client_name');
+        $invoice->Client_address= $request->input('client_address');
+        $invoice->notes= $request->input('notes');
+        $invoice->item_no= $request->input('item_no');
+        $invoice->date_created= $request->input('date_created');
+        $invoice->access_code= $request->input('access_code');
+        $invoice->save();
 
-        return redirect('/posts')->with('success', 'Post Created');
+        return redirect('/posts')->with('success', 'Invoice Created');
     }
 
     /**
@@ -88,7 +95,7 @@ class PostsController extends Controller
      */
     public function edit($id)
     {
-        $post=Post::find($id);
+        $invoice=Post::find($id);
 
         // Check for correct user edit
         if(auth()->user()->id !==$post->user_id){
@@ -128,14 +135,15 @@ class PostsController extends Controller
      */
     public function destroy($id)
     {
-        $post= Post::find($id);
+        // $post= Post::find($id);
 
-        // Check for correct user
-        if(auth()->user()->id !==$post->user_id){
-            return redirect('/posts')->with('error', 'Nope, cant do that... sorry');
-        }
+        // // Check for correct user
+        // if(auth()->user()->id !==$post->user_id){
+        //     return redirect('/posts')->with('error', 'Nope, cant do that... sorry');
+        // }
         
-        $post->delete();
-        return redirect('/posts')->with('success', 'Post Removed');
+        // $post->delete();
+        // return redirect('/posts')->with('success', 'Post Removed');
+        $invoice= DB::find($id);
     }
 }

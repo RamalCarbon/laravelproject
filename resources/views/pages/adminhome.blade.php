@@ -35,6 +35,9 @@
                                 </tr>
                             @endforeach
                         </table>
+                        <div class="alert alert-success" role="alert">
+                            <p>You're Logged in as USERS</p>
+                        </div>
                     @else
                         <p class="jumbotron">You Made no invoices</p>
                     @endif

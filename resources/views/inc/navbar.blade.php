@@ -59,11 +59,10 @@
                   <a class="nav-link" href="/services">Services</a>
               </li>
               <li class="nav-item dropdown active">
-                <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog</a>
+                <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sales</a>
                 <div class="dropdown-menu" aria-labelledby="dropdown01">
-                  <a class="dropdown-item" href="/posts">Posts</a>
-                  <a class="dropdown-item" href="/posts/create">Create Post</a>
-                  <a class="dropdown-item" href="#">Third option</a>
+                  <a class="dropdown-item" href="/posts">Invoices</a>
+                  <a class="dropdown-item" href="/posts/create">Create Invoice</a>
                 </div>
                 <li class="nav-item active">
                   <a class="nav-link" href="/home">Dashboard</a>
